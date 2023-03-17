@@ -92,6 +92,48 @@ function onload() {
 
   // Clean up
   document.removeEventListener('DOMContentLoaded', onload);
+
+  // Write and intersection observer that looks for .timeline-entry and adds the class "in-view" when it's in view
+  function startObserving() {
+    const template = `<img src="/img/israel-flag.gif" width="20" height="20"/>`;
+
+    function multiplyString(string, times) {
+      return new Array(times + 1).join(string);
+    }
+
+    function updateAmount(amount) {
+      document.querySelector('#protester-amount').innerHTML = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      document.querySelector('#flags').innerHTML = multiplyString(template, Math.ceil(amount / 50000))
+      
+    }
+    const entries = document.querySelectorAll('.timeline-entry');
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // entry.target.classList.add('in-view');
+          const amount = entry.target.getAttribute('data-protesterAmount');
+          updateAmount(amount);
+          return;
+        } else {
+          // entry.target.classList.remove('in-view');
+        }
+      });
+    }, options);
+    entries.forEach((entry) => {
+      observer.observe(entry);
+    });
+  }
+  startObserving();
+
+  
+  
+  
+  
 }
 
 if (document.readyState != 'loading') {
