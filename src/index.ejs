@@ -59,7 +59,7 @@
             <div class="captioned-image image-right">
               <% if (entry.image.link) { %><a href="<%= entry.image.link %>"
                 ><% } %>
-                <img src="<%= entry.image.src %>" alt="<%= entry.image.src %>" />
+                <img src="<%= entry.imageUrl %>" alt="<%= entry.image.alt %>" />
                 <% if (entry.image.link) { %></a
               ><% } %> <% if (entry.image.caption) { %>
               <span class="caption"><%- entry.image.caption %></span>
