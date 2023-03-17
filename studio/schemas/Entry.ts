@@ -44,6 +44,7 @@ export const Entry = {
           'handshake',
           'building-flag',
           'dumpster-fire',
+          'gavel',
         ],
         layout: 'dropdown',
       },
@@ -63,6 +64,7 @@ export const Entry = {
       type: 'string',
       description: 'The color of the entry icon.',
       options: {list: ['blue', 'red']},
+      initialValue: 'blue',
     },
     {
       name: 'slug',

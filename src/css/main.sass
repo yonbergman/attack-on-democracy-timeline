@@ -13,6 +13,7 @@ body
 h1
 	// font-family: 'Roboto Slab', serif
 	margin-top: 0
+	margin-bottom: 0
 	color: $title-color
 
 a
@@ -287,67 +288,6 @@ footer.page-footer
 	.timeline-entry.odd .timeline-description,
 	.timeline-entry.even .timeline-description
 		margin-left: 35px
-
-// DARK MODE
-@media (prefers-color-scheme: dark)
-	body
-		background-color: $dark-main-background
-
-	header.page-header,
-	footer.page-footer
-		background-color: #002EAC
-
-	body,
-	h1,
-	header.page-header p,
-	footer.page-footer p,
-	.timeline-description,
-	.timeline-filter,
-	.timeline-icon i,
-	.attribution,
-	.etc
-		color: $dark-main-color
-
-	.timeline-description a,
-	.attribution a,
-	.etc a
-		color: $dark-link-color
-
-	div.etc h1
-		color: $dark-etc-header-color
-
-	.timeline-description
-		background-color: $dark-card-background
-
-	.timeline-filter-wrapper
-		background-color: $dark-filterbar-background
-
-	.timeline::before
-		background-color: $dark-timeline-line-color
-
-	.timeline-icon
-		border-color: $dark-timeline-line-color
-
-	.timeline-icon
-		@each $name, $color in $icon-colors
-			&.#{$name}
-				background-color: darken($color, 20%)
-
-	/* Arrows */
-	.no-js .timeline-entry .timeline-description::after
-		border-right-color: $dark-card-background
-
-	@media only screen and (min-width: 769px)
-		.timeline-entry.even .timeline-description::after
-			border-left-color: $dark-card-background
-
-	@media only screen and (max-width: 768px) and (min-width: 415px)
-		.timeline-entry.even .timeline-description::after
-			border-right-color: $dark-card-background
-
-	@media only screen and (min-width: 415px)
-		.timeline-entry.odd .timeline-description::after
-			border-right-color: $dark-card-background
 
 // NO JS FALLBACK
 .no-js
