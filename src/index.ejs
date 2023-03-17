@@ -6,23 +6,20 @@
   <body>
     <% if (content.header) { %>
     <header class="page-header">
-      <% if (!utilities.isWrappedInParagraphTags(content.header)) { %>
-      <p>
-        <% } %> <%- content.header %> <% if (!utilities.isWrappedInParagraphTags(content.header)) {
-        %>
-      </p>
-
-      <p><% } %></p>
+      <h1>
+        מאבק על הדמוקרטיה
+        <span>ציר זמן</span>
+      </h1>
     </header>
 
     <% } %>
     <section>
       <div class="timeline-filter-wrapper">
         <header class="timeline-filter">
-          <ul>
+          <ul dir="rtl">
             <li>
               <input type="checkbox" name="filter-shortcut" id="all" checked />
-              <label for="all">All</label>
+              <label for="all">כל הנושאים</label>
             </li>
             <% content.filters.forEach(function(filter){ %>
             <li>
@@ -84,18 +81,14 @@
     </section>
     <% if (content.footer) { %>
     <footer class="page-footer">
-      <% if (!utilities.isWrappedInParagraphTags(content.footer)) { %>
       <p>
-        <% } %> <%- content.footer %> <% if (!utilities.isWrappedInParagraphTags(content.footer)) {
-        %>
+        נבנה ע״י <a href="https://twitter.com/idoivri" target="_blank">עידו עברי</a> ו<a href="https://twitter.com/yonbergman" target="_blank">יונתן ברגמן</a>
+        כחלק מהדמוקרטון
       </p>
-      <% } %>
       <p>
-        Built with Molly White's
-        <a href="https://github.com/molly/static-timeline-generator" target="_blank"
-          >static timeline generator</a
-        >.
+        נבנה באמצעות <a href="https://github.com/molly/static-timeline-generator" target="_blank">כלי הזמן של מולי ווייט</a>
       </p>
+      
     </footer>
     <% } %>
 

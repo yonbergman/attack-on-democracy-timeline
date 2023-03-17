@@ -14,6 +14,9 @@
   rel="stylesheet"
   type="text/css"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="css/normalize.css" />
 <link rel="stylesheet" href="css/main.css" />
@@ -26,32 +29,25 @@
   <body>
     
     <header class="page-header">
-      
-      <p>
-         ציר הזמן של הדמוקרטיה 
-      </p>
-
-      <p></p>
+      <h1>
+        מאבק על הדמוקרטיה
+        <span>ציר זמן</span>
+      </h1>
     </header>
 
     
     <section>
       <div class="timeline-filter-wrapper">
         <header class="timeline-filter">
-          <ul>
+          <ul dir="rtl">
             <li>
               <input type="checkbox" name="filter-shortcut" id="all" checked />
-              <label for="all">All</label>
+              <label for="all">כל הנושאים</label>
             </li>
             
             <li>
               <input type="checkbox" name="filter" id="cat" checked />
               <label for="cat">Cat </label>
-            </li>
-            
-            <li>
-              <input type="checkbox" name="filter" id="dog" checked />
-              <label for="dog">Dog </label>
             </li>
             
             <li>
@@ -65,6 +61,11 @@
             </li>
             
             <li>
+              <input type="checkbox" name="filter" id="מחאה" checked />
+              <label for="מחאה">מחאה </label>
+            </li>
+            
+            <li>
               <input type="checkbox" name="filter" id="ממשלה" checked />
               <label for="ממשלה">ממשלה </label>
             </li>
@@ -73,6 +74,57 @@
         </header>
       </div>
       <article class="timeline">
+        
+        <div
+          class="timeline-entry"
+          data-category="מחאה,אירוע חשוב"
+          aria-hidden="false"
+        >
+          <div class="timeline-icon blue" title="">
+            
+            <i class="fa-solid fa-flag" aria-hidden="true"></i>
+            
+          </div>
+          <div dir="rtl" class="timeline-description">
+            <span class="timestamp"
+              ><time datetime="2023-01-07T17:00:00.000Z"
+                >07/1/23 19:00</time
+              ></span
+            >
+            <h2 >
+              הפגנה ראשונה ב״הבימה״ נגד ההפיכה המשטרית
+            </h2>
+            
+            <div class="captioned-image image-right">
+              
+                <img src="https://cdn.sanity.io/images/9whcvc0a/production/b32d847c408ac73e666bd09e0c72214512c6f43d-1200x899.webp?w=200" alt="" />
+                 
+              <span class="caption">רחובות תל אביב ב-7 לינואר</span>
+              
+            </div>
+             
+            <p>
+               כ-20 אלף מפגינים התכנסו במוצאי שבת בכיכר ״הבימה״ בתל אביב, וממנה יצאו שתי צעדות מחאה נגד הממשלה. לצדם מחו כ-200 מפגינים גם בחיפה נגד מהלכי הממשלה. 
+
+ סביב השעה 19:30, יצאה צעדה בהובלת חברי הכנסת איימן עודה, נעמה לזימי, עופר כסיף וח"כ לשעבר מוסי רז להפגנה ונאומים של "עומדים ביחד", ברחבת מוזיאון תל אביב. במקום נאם גם אבי חימי ראש לשכת עורכי הדין.
+
+סביב השעה 20:00 יצאה מהכיכר צעדת לפידים. סמוך לשעה 21:00 התקדמו כמה מאות מפגינים לכיוון הירידה לנתיבי איילון לדרום ממחלף השלום. המשטרה הצליחה לבלום את רובם, אך חסמה את הכביש באופן יזום למשך זמן קצר.  
+            </p>
+             
+            <ul>
+              
+              <li>
+                <a href="https://twitter.com/bar_peleg/status/1611777868534611973?s=20" target="_blank">תיעוד ההפגנה בסדרת ציוצים של בר פלג, כתב ״הארץ״</a>
+              </li>
+              
+              <li>
+                <a href="https://www.haaretz.co.il/news/politi/2023-01-07/ty-article/.premium/00000185-8cb6-da33-a9e7-ecff16f30000" target="_blank">כתבה ב״הארץ״ הסוקרת את הנעשה בהפגנת ה-7 ביולי</a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
         
         <div
           class="timeline-entry"
@@ -113,12 +165,12 @@
         
         <div
           class="timeline-entry"
-          data-category="cat,dog"
+          data-category="אירוע חשוב"
           aria-hidden="false"
         >
-          <div class="timeline-icon red" title="">
+          <div class="timeline-icon blue" title="">
             
-            <i class="fa-solid fa-cat" aria-hidden="true"></i>
+            <i class="fa-solid fa-dumpster-fire" aria-hidden="true"></i>
             
           </div>
           <div dir="rtl" class="timeline-description">
@@ -150,12 +202,12 @@
         
         <div
           class="timeline-entry"
-          data-category="cat"
+          data-category="ממשלה,אירוע חשוב"
           aria-hidden="false"
         >
           <div class="timeline-icon grey" title="">
             
-            <i class="fa-solid fa-cat" aria-hidden="true"></i>
+            <i class="fa-solid fa-microphone" aria-hidden="true"></i>
             
           </div>
           <div dir="rtl" class="timeline-description">
@@ -261,17 +313,14 @@
     </section>
     
     <footer class="page-footer">
-      
       <p>
-         A footer goes here. 
+        נבנה ע״י <a href="https://twitter.com/idoivri" target="_blank">עידו עברי</a> ו<a href="https://twitter.com/yonbergman" target="_blank">יונתן ברגמן</a>
+        כחלק מהדמוקרטון
+      </p>
+      <p>
+        נבנה באמצעות <a href="https://github.com/molly/static-timeline-generator" target="_blank">כלי הזמן של מולי ווייט</a>
       </p>
       
-      <p>
-        Built with Molly White's
-        <a href="https://github.com/molly/static-timeline-generator" target="_blank"
-          >static timeline generator</a
-        >.
-      </p>
     </footer>
     
 
