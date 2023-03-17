@@ -233,8 +233,16 @@ footer.page-footer
 
 @media only screen and (max-width: 768px) and (min-width: 415px)
 	.timeline-entry.even .timeline-description:after
-		right: 100%
-		border-right-color: $card-background
+		left: 100%
+		border-left-color: $card-background
+		// right: auto
+		// border-right-color: transparent
+
+	.timeline-entry.odd .timeline-description:after
+		right: auto !important
+		border-right-color: transparent !important
+		left: 100% !important
+		border-left-color: $card-background !important
 
 @media only screen and (min-width: 415px)
 	.timeline-description:after
@@ -256,7 +264,11 @@ footer.page-footer
 @media only screen and (max-width: 768px)
 	.timeline::before,
 	.timeline-icon
-		left: 0
+		right: 0
+		left: auto
+
+	.timeline-icon
+		margin-right: -20px
 
 	.timeline-entry,
 	.timeline-entry.short
@@ -264,7 +276,8 @@ footer.page-footer
 
 	.timeline-entry.odd .timeline-description,
 	.timeline-entry.even .timeline-description
-		margin-left: 50px
+		margin-right: 50px
+		margin-left: 0
 
 	.timeline-description
 		width: 90%
@@ -283,7 +296,7 @@ footer.page-footer
 	.timeline-icon
 		width: 30px
 		height: 30px
-		margin-left: -15px
+		margin-right: -15px
 
 		i
 			font-size: 15px
@@ -291,7 +304,8 @@ footer.page-footer
 
 	.timeline-entry.odd .timeline-description,
 	.timeline-entry.even .timeline-description
-		margin-left: 35px
+		margin-right: 35px
+		margin-left: 0
 
 // NO JS FALLBACK
 .no-js
