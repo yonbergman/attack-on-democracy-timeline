@@ -28,7 +28,7 @@ const enrich = async (entries) => {
     if (Object.prototype.hasOwnProperty.call(entry, 'categories')) {
       entry.categoriesString = entry.categories.join(',');
     }
-    entry.imageUrl = entry.image && (await imageUrl(entry.image, 200));
+    entry.imageUrl = entry.image && (await imageUrl(entry.image, 400));
   }
   return entries;
 };
