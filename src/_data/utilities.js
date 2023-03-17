@@ -8,15 +8,27 @@ const sentenceCase = function (str) {
   return str[0].toUpperCase() + str.slice(1).toLowerCase();
 };
 
+const months = [
+  'בינואר',
+  'בפבואר',
+  'במרץ',
+  'באפריל',
+  'במאי',
+  'ביוני',
+  'ביולי',
+  'באוגוסט',
+  'בספטמבר',
+  'באוקטובר',
+  'בנובמבר',
+  'בדצמבר',
+];
+
 const humanizeDate = function (datetime, date) {
   const m = moment(datetime || date);
-  if (m.hour() === 0 && m.minute() === 0) {
-    return m.format('DD/M/YY');
-  }
-  if (datetime) {
-    return m.format('DD/M/YY HH:mm');
-  }
-  return m.format('LL');
+  const format = `D ${months[m.month()]}, YYYY${
+    m.hour() === 0 && m.minute() === 0 ? '' : ' • HH:mm'
+  }`;
+  return m.format(format);
 };
 
 const isWrappedInParagraphTags = function (html) {
