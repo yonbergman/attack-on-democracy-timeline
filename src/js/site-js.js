@@ -101,7 +101,9 @@ function onload() {
       return new Array(times + 1).join(string);
     }
 
+    let currentAmount = 0;
     function updateAmount(amount) {
+      currentAmount = amount;
       document.querySelector('#protester-amount').innerHTML = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       document.querySelector('#flags').innerHTML = multiplyString(template, Math.ceil(amount / 50000))
       
@@ -112,17 +114,28 @@ function onload() {
       rootMargin: '0px',
       threshold: 0.5,
     };
+
     const observer = new IntersectionObserver((entries) => {
+      let max = 0;
+      let found = 0;
+      
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          found += 1;
           // entry.target.classList.add('in-view');
           const amount = entry.target.getAttribute('data-protesterAmount');
-          updateAmount(amount);
+          if (amount > max) {
+            max = amount;
+          }
           return;
         } else {
           // entry.target.classList.remove('in-view');
         }
       });
+      if (found > 0) {
+        updateAmount(max);
+
+      }
     }, options);
     entries.forEach((entry) => {
       observer.observe(entry);
