@@ -28,8 +28,11 @@ a
 header.page-header
 	padding: 50px 0
 	text-align: center
-	background-color: #002EAC
 	font-family: 'Alef', sans-serif
+	position: relative
+	background-size: contain
+	background-image: url('/img/background.png')
+	background-color: #002EAC
 	h1
 		font-size: 3.5em
 		letter-spacing: -0.02em
@@ -270,6 +273,9 @@ footer.page-footer
 		border-right-color: $card-background
 
 @media only screen and (max-width: 768px)
+	header.page-header
+		background-size: cover
+		background-position: center bottom
 	.timeline::before,
 	.timeline-icon
 		right: 0
