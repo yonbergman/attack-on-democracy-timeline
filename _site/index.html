@@ -14,13 +14,7 @@
   rel="stylesheet"
   type="text/css"
 />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-  integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="css/normalize.css" />
 <link rel="stylesheet" href="css/main.css" />
 <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -34,7 +28,7 @@
     <header class="page-header">
       
       <p>
-         Welcome to this wonderful example timeline. 
+         ציר הזמן של הדמוקרטיה 
       </p>
 
       <p></p>
@@ -60,6 +54,21 @@
               <label for="dog">Dog </label>
             </li>
             
+            <li>
+              <input type="checkbox" name="filter" id="אירוע חשוב" checked />
+              <label for="אירוע חשוב">אירוע חשוב </label>
+            </li>
+            
+            <li>
+              <input type="checkbox" name="filter" id="אישים" checked />
+              <label for="אישים">אישים </label>
+            </li>
+            
+            <li>
+              <input type="checkbox" name="filter" id="ממשלה" checked />
+              <label for="ממשלה">ממשלה </label>
+            </li>
+            
           </ul>
         </header>
       </div>
@@ -70,39 +79,31 @@
           data-category="cat"
           aria-hidden="false"
         >
-          <div class="timeline-icon green" title="cat">
+          <div class="timeline-icon grey" title="">
             
-            <i class="fas fa-cat" aria-hidden="true"></i>
+            <i class="fa-solid fa-cat" aria-hidden="true"></i>
             
           </div>
-          <div class="timeline-description">
+          <div dir="rtl" class="timeline-description">
             <span class="timestamp"
-              ><time datetime="2021-01-01 05:00"
-                >January 1, 2021 5:00 AM</time
+              ><time datetime="2023-01-05T07:00:00.000Z"
+                >05/1/23 09:00</time
               ></span
             >
-            <h2>
-              <a id="cat" href="#cat"><i class="fas fa-link"></i></a>Cats are very good
+            <h2 >
+              שופטי בג״ץ קיימו דיון בעתירות נגד מינוי ח״כ דרעי לתפקיד שר הפנים והבריאות
             </h2>
-            
-            <div class="captioned-image image-right">
-              <a href="http://placekitten.com"
-                >
-                <img src="http://placekitten.com/200/300" alt="http://placekitten.com/200/300" />
-                </a
-              > 
-              <span class="caption">Kitten!</span>
-              
-            </div>
              
             <p>
-               The best thing in the universe is a cardboard box. Chirp at birds catasstrophe for meowwww for hiding behind the couch until lured out by a feathery toy for morning beauty routine of licking self sugar, my siamese, stalks me (in a good way), day and night lick the other cats. Pushed the mug off the table shove bum in owner's face like camera lens or tickle my belly at your own peril i will pester for food when you're in the kitchen even if it's salad and grass smells good, licks your face, but hiiiiiiiiii feed me now. 
+               בג״ץ דן במשך כ-6 שעות בעתירות שהוגשו נגד חוקיות המינוי של חה״כ ש"ס אריה דרעי לשר בממשלה. העתירות הוגשו לאחר אישור החוק שמאפשר לשר לכהן בממשלה גם אם הורשע בפלילים, ב-27 לדצמבר 2022, המכונה ״חוק דרעי״. 
+
+ 
             </p>
              
             <ul>
               
               <li>
-                <a href="https://en.wikipedia.org/wiki/Cat" target="_blank">Cat</a>
+                <a href="https://www.calcalist.co.il/local_news/article/rkjtvlnqj" target="_blank">כתבת ״כלכליסט״ על הדיון בבג״ץ</a>
               </li>
               
             </ul>
@@ -112,46 +113,147 @@
         
         <div
           class="timeline-entry"
-          data-category="dog"
+          data-category="cat,dog"
           aria-hidden="false"
         >
-          <div class="timeline-icon green" title="dog">
+          <div class="timeline-icon red" title="">
             
-            <i class="fas fa-dog" aria-hidden="true"></i>
+            <i class="fa-solid fa-cat" aria-hidden="true"></i>
             
           </div>
-          <div class="timeline-description">
+          <div dir="rtl" class="timeline-description">
             <span class="timestamp"
-              ><time datetime="2021-05-01 23:55"
-                >May 1, 2021 11:55 PM</time
+              ><time datetime="2023-01-05T03:00:00.000Z"
+                >05/1/23 05:00</time
               ></span
             >
-            <h2>
-              <a id="dog" href="#dog"><i class="fas fa-link"></i></a>Puppies are great too
+            <h2 >
+              השר בן גביר מבקר בהר הבית
             </h2>
             
             <div class="captioned-image image-right">
-              <a href="http://place-puppy.com"
-                >
-                <img src="https://place-puppy.com/300x300" alt="https://place-puppy.com/300x300" />
-                </a
-              > 
-              <span class="caption">Puppy!</span>
+              
+                <img src="https://cdn.sanity.io/images/9whcvc0a/production/f011caab08ae5976f489581bf00a27363702f3c7-1440x1080.jpg?w=200" alt="" />
+                 
+              <span class="caption">השר לביטחון לאומי איתמר בן גביר בהר הבית, 3 בינואר 2023. צילום: מינהלת הר הבית</span>
               
             </div>
              
             <p>
-               Doggo ipsum sub woofer smol wow very biscit aqua doggo pupper dat tungg tho big ol pupper, very jealous pupper mlem heckin angery woofer very jealous pupper. Blep waggy wags long doggo, corgo. Tungg wow such tempt mlem very jealous pupper boofers lotsa pats, snoot smol big ol ruff doge super chub, long doggo heckin good boys and girls h*ck heck. Shoober blop many pats borkf, such treat. Big ol what a nice floof long water shoob wrinkler heck sub woofer, pupper porgo wow very biscit. 
+               כמה ימים אחרי השבעת הממשלה, ב־3 בינואר, החליט השר לביטחון לאומי איתמר בן גביר לבקר בהר הבית. האירוע הוסתר מהתקשורת והתרחש בשעת בוקר מוקדמת – ובחופזה. בן גביר רצה לצלם את עצמו במקום ולהתקדם הלאה, לסמן וי.
+
+לא נרשמו מהומות (מיידי האבנים ישנים ב־05:00 בבוקר), אך ביקור השר עורר תגובות נזעמות ברחבי העולם הערבי. איחוד האמירויות, למשל, משכה את ההזמנה הפתוחה עבור נתניהו להגיע לביקור בפעם הראשונה. עד עתה לא נשלחה הזמנה חדשה. 
+            </p>
+             
+          </div>
+        </div>
+        
+        <div
+          class="timeline-entry"
+          data-category="cat"
+          aria-hidden="false"
+        >
+          <div class="timeline-icon grey" title="">
+            
+            <i class="fa-solid fa-cat" aria-hidden="true"></i>
+            
+          </div>
+          <div dir="rtl" class="timeline-description">
+            <span class="timestamp"
+              ><time datetime="2023-01-04T18:00:00.000Z"
+                >04/1/23 20:00</time
+              ></span
+            >
+            <h2 >
+              יריב לוין שר המשפטים מכנס מסיבת עיתונאים ובה מציג את השלב הראשון ב-״רפורמת המשילות״
+            </h2>
+             
+            <p>
+               שר המשפטים לוין מסיבת עיתונאים והכריז על ההפיכה המשטרית (הערה: בשלב זה טרם כונה כך המהלך). באותו ערב לוין כינה את המהלך "רפורמת המשילות" והסביר שמדובר רק בשלב הראשון, שיתמקד בחמישה נושאים "לתיקון מערכת המשפט": שינוי הרכב הוועדה למינוי שופטים, הגבלת סמכות בג"ץ לפסול חוקים, פסקת ההתגברות, ביטול עילת הסבירות והפיכת היועצים המשפטיים למינויים פוליטיים. 
             </p>
              
             <ul>
               
               <li>
-                <a href="https://en.wikipedia.org/wiki/Dog" target="_blank">Dog</a>
+                <a href="https://www.youtube.com/watch?v=gCXpDvBltZo" target="_blank">סרטון מסיבת העיתונאים של השר יריב לוין</a>
               </li>
               
             </ul>
             
+          </div>
+        </div>
+        
+        <div
+          class="timeline-entry"
+          data-category="ממשלה,אירוע חשוב,אישים"
+          aria-hidden="false"
+        >
+          <div class="timeline-icon grey" title="">
+            
+            <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+            
+          </div>
+          <div dir="rtl" class="timeline-description">
+            <span class="timestamp"
+              ><time datetime="2023-01-04T14:00:00.000Z"
+                >04/1/23 16:00</time
+              ></span
+            >
+            <h2 >
+              היועצת  להמשפטית לממשלה, גלי בהרב מיארה, פרסמה חוות דעת המתנגדת למינויו של ח״כ אריה דרעי לשר
+            </h2>
+             
+            <p>
+               היועצת המשפטית לממשלה, גלי בהרב-מיארה, הודיעה רשמית אחר הצהריים (רביעי) כי היא מתנגדת למינויו של יו"ר ש"ס אריה דרעי לשר.   
+            </p>
+             
+            <ul>
+              
+              <li>
+                <a href="https://www.haaretz.co.il/news/politi/2023-01-02/ty-article/.premium/00000185-734b-de47-afdf-f3fb90900000?lts=1679055994983" target="_blank">כתבה ב״הארץ״ על ההתנגדות של בהרב מיארה למינוי דרעי</a>
+              </li>
+              
+              <li>
+                <a href="https://twitter.com/ariyederi/status/1610675539332796423" target="_blank">ציוץ של דרעי בתגובה לפרסום חוות הדעת של בהרב מיארה</a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+        
+        <div
+          class="timeline-entry"
+          data-category="ממשלה,אירוע חשוב"
+          aria-hidden="false"
+        >
+          <div class="timeline-icon blue" title="">
+            
+            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+            
+          </div>
+          <div dir="rtl" class="timeline-description">
+            <span class="timestamp"
+              ><time datetime="2022-12-28T22:00:00.000Z"
+                >29/12/22</time
+              ></span
+            >
+            <h2 >
+              השבעת ממשלת ישראל ה-37
+            </h2>
+            
+            <div class="captioned-image image-right">
+              
+                <img src="https://cdn.sanity.io/images/9whcvc0a/production/c49e948a79c66ef307fd258e2242a3942971b044-2880x1920.jpg?w=200" alt="" />
+                 
+              <span class="caption">ממשלת ישראל ה-37. קרדיט: אבי אוחיון, לע״מ.</span>
+              
+            </div>
+             
+            <p>
+               ממשלת ישראל ה-37 בראשות בנימין נתניהו קיבלה את אמונה של הכנסת העשרים וחמש והושבעה ב-29 בדצמבר 2022, ה' בטבת ה'תשפ"ג. 
+            </p>
+             
           </div>
         </div>
         

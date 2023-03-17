@@ -18,12 +18,11 @@ const client = createClient({
 
 async function fetchAllEntries() {
   const query = `
-    *[ _type == "entry" && !(_id in path("drafts.**")) ] | order(publishedAt desc)
+    *[ _type == "entry" && !(_id in path("drafts.**")) ] | order(datetime desc)
   `;
   const params = {};
 
   const a = await client.fetch(query, params);
-  console.log(a);
   return a;
 }
 

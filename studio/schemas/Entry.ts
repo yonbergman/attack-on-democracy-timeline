@@ -26,11 +26,25 @@ export const Entry = {
     },
     {
       name: 'icon',
-      // title: 'Icon',
+      title: 'Icon',
       description: 'The icon of the entry.',
       type: 'string',
       options: {
-        list: ['cat', 'dog'],
+        list: [
+          'flag',
+          'calendar-days',
+          'landmark',
+          'person-military-to-person',
+          'plane-departure',
+          'microphone',
+          'globe',
+          'scroll',
+          'person-rifle',
+          'person-military-rifle',
+          'handshake',
+          'building-flag',
+          'dumpster-fire',
+        ],
         layout: 'dropdown',
       },
     },
@@ -40,7 +54,7 @@ export const Entry = {
       type: 'array',
       of: [{type: 'string'}],
       options: {
-        list: ['cat', 'dog'],
+        list: ['ממשלה', 'מחאה', 'אירוע חשוב', 'חקיקה', 'תגובות בעולם', 'אישים', 'תקציבים'],
       },
     },
     {
@@ -48,7 +62,7 @@ export const Entry = {
       title: 'Color',
       type: 'string',
       description: 'The color of the entry icon.',
-      options: {list: ['blue', 'red', 'green']},
+      options: {list: ['blue', 'red']},
     },
     {
       name: 'slug',
@@ -83,6 +97,11 @@ export const Entry = {
           name: 'caption',
           title: 'Caption',
           type: 'string',
+        },
+        {
+          name: 'link',
+          title: 'Link',
+          type: 'url',
         },
       ],
     },

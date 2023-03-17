@@ -41,19 +41,18 @@
           aria-hidden="false"
         >
           <div class="timeline-icon <%- entry.color || 'grey' %>" title="<%= entry.faicon %>">
-            <% if (entry.faicon) { %>
-            <i class="fas fa-<%= entry.faicon %>" aria-hidden="true"></i>
+            <% if (entry.icon) { %>
+            <i class="fa-solid fa-<%= entry.icon %>" aria-hidden="true"></i>
             <% } %>
           </div>
-          <div class="timeline-description">
+          <div dir="rtl" class="timeline-description">
             <span class="timestamp"
               ><time datetime="<%- entry.datetime || entry.date %>"
                 ><%- utilities.humanizeDate(entry.datetime, entry.date) %></time
               ></span
             >
-            <h2>
-              <a id="<%= entry.id %>" href="#<%= entry.id %>"><i class="fas fa-link"></i></a><%-
-              entry.title %>
+            <h2 >
+              <%- entry.title %>
             </h2>
             <% if (entry.image) { %>
             <div class="captioned-image image-right">
@@ -73,8 +72,7 @@
             <ul>
               <% entry.links.forEach(function (link) { %>
               <li>
-                <a href="<%= link.href %>" target="_blank"><%- link.linkText %></a><%-
-                link.extraText %>
+                <a href="<%= link.url %>" target="_blank"><%- link.title %></a>
               </li>
               <% }) %>
             </ul>
