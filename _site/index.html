@@ -2,11 +2,11 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
-<title>Static timeline generator</title>
+<title>מאבק על הדמוקרטיה - ציר זמן</title>
 
-<meta name="description" content="A super fancy timeline" />
+<meta name="description" content="ציר זמן של כל האירועים המשמעותיים במאבק על הדמוקרטיה" />
  
-<meta name="author" content="Jane Doe" />
+<meta name="author" content="עידו עברי ויונתן ברגמן" />
 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link
@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="css/normalize.css" />
 <link rel="stylesheet" href="css/main.css" />
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<meta property="og:title" content="Static timeline generator" />
+<meta property="og:title" content="מאבק על הדמוקרטיה - ציר זמן" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="img/og-image.jpg" />
 
@@ -70,10 +70,59 @@
               <label for="ממשלה">ממשלה </label>
             </li>
             
+            <li>
+              <input type="checkbox" name="filter" id="תקציבים" checked />
+              <label for="תקציבים">תקציבים </label>
+            </li>
+            
           </ul>
         </header>
       </div>
       <article class="timeline">
+        
+        <div
+          class="timeline-entry"
+          data-category="אירוע חשוב,חקיקה,תקציבים"
+          aria-hidden="false"
+        >
+          <div class="timeline-icon blue" title="calendar-days">
+            
+            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+            
+          </div>
+          <div dir="rtl" class="timeline-description">
+            <span class="timestamp"
+              ><time datetime="2023-03-08T13:14:00.000Z"
+                >08/3/23 15:14</time
+              ></span
+            >
+            <h2 >
+              כ-170 ראשי רשויות שלחו מכתב חריף לרה״מ נתניהו, שר האוצר סמוטריץ׳ ושר החינוך קיש ובו התנגדו למימון מוסדות חינוך לא רשמיים בחינוך החרדי
+            </h2>
+             
+            <p>
+               מעל מאה ראשי רשויות הודיעו היום במכתב  לראש הממשלה בנימין נתניהו, שר החינוך יואב קיש ושר האוצר בצלאל סמוטריץ', כי לא ישתפו פעולה עם ביצוע הסכמים הקואליציוניים בקשר להרחבת חוק נהרי – ולא יסכימו לממן מתקציבי העירייה שלהם את התיכונים והגנים הלא רשמיים בחינוך החרדי.
+
+ראש הערים כותבים:
+אנו מתנגדים נחרצות להרחבת "חוק נהרי", המחייב את הרשויות המקומיות לתקצב
+מוסדות חינוך שאינם מוסדות חינוך רשמיים בתחומיהן. חוק נהרי, מלכתחילה סותר
+את עקרון היסוד של אי מעורבות השלטון המקומי בנושא חינוך במערכת החינוך הלא
+רשמית. הכרה במוסדות החינוך שאינם רשמיים )לרבות רישוי מוסדות פטור( נעשית
+על ידי המדינה, ועל כן המדינה, היא שצריכה לתקצב מוסדות אלו. לא נסכים להשתת
+נטל מימוני עצום זה על הרשויות המקומיות, הנדרשות לממן מתקציביהן השוטפים
+את שירותי החינוך הרשמיים בתחומיהן. 
+            </p>
+             
+            <ul>
+              
+              <li>
+                <a href="https://ynet-pic1.yit.co.il/picserver5/wcm_upload_files/2023/01/08/r11hbLu9s/__________________________________________________.pdf" target="_blank">מכתב ראשי הרשויות המקומיות</a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
         
         <div
           class="timeline-entry"
@@ -97,9 +146,9 @@
             
             <div class="captioned-image image-right">
               
-                <img src="https://cdn.sanity.io/images/9whcvc0a/production/b32d847c408ac73e666bd09e0c72214512c6f43d-1200x899.webp?w=200" alt="" />
+                <img src="https://cdn.sanity.io/images/9whcvc0a/production/4203039cfed2029fcbe0b626e55977d5c5de4c8d-1200x1600.jpg?w=200" alt="" />
                  
-              <span class="caption">רחובות תל אביב ב-7 לינואר</span>
+              <span class="caption">ההפגנה ב-7 לינואר. קרדיט: יונתן ברגמן.</span>
               
             </div>
              
@@ -311,17 +360,6 @@
         
       </article>
     </section>
-    
-    <footer class="page-footer">
-      <p>
-        נבנה ע״י <a href="https://twitter.com/idoivri" target="_blank">עידו עברי</a> ו<a href="https://twitter.com/yonbergman" target="_blank">יונתן ברגמן</a>
-        כחלק מהדמוקרטון
-      </p>
-      <p>
-        נבנה באמצעות <a href="https://github.com/molly/static-timeline-generator" target="_blank">כלי הזמן של מולי ווייט</a>
-      </p>
-      
-    </footer>
     
 
     <script src="js/classlist-polyfill.js"></script>

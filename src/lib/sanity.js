@@ -4,11 +4,6 @@ const imageUrlBuilder = require('@sanity/image-url');
 
 const projectId = process.env.SANITY_PROJECT;
 const apiToken = process.env.SANITY_TOKEN;
-console.log({
-  projectId,
-  dataset: 'production',
-  token: apiToken,
-});
 
 const client = createClient({
   projectId,

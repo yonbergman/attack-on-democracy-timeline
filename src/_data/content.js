@@ -1,12 +1,11 @@
 const { fetchAllEntries, imageUrl } = require('../lib/sanity');
 
-const header = 'ציר הזמן של הדמוקרטיה';
-const footer = 'A footer goes here.';
+const header = 'מאבק על הדמוקרטיה - ציר זמן';
 
 // Page details
-const pageTitle = 'Static timeline generator'; // The title of the page that shows in the browser tab
-const pageDescription = 'A super fancy timeline'; // The description of the page for search engines
-const pageAuthor = 'Jane Doe'; // Your name
+const pageTitle = 'מאבק על הדמוקרטיה - ציר זמן';
+const pageDescription = 'ציר זמן של כל האירועים המשמעותיים במאבק על הדמוקרטיה';
+const pageAuthor = 'עידו עברי ויונתן ברגמן';
 
 // DON'T EDIT BELOW THIS LINE! --------------------------------------------------------------------
 const getFilters = (entries) => {
@@ -38,7 +37,6 @@ module.exports = async function () {
   const entries = await fetchAllEntries();
   return {
     header,
-    footer,
     entries: await enrich(entries),
     filters: getFilters(entries),
     head: {
