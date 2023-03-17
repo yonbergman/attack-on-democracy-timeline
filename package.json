@@ -1,7 +1,7 @@
 {
-  "name": "timeline-template",
+  "name": "fightfordemocracystory.co.il",
   "version": "1.0.0",
-  "description": "Easily-forkable project to create timelines like https://www.mollywhite.net/wikimedia-timeline/",
+  "description": "A timeline of events leading up to the 2023 Israeli constitutional crisis",
   "main": "index.js",
   "scripts": {
     "serve": "npx @11ty/eleventy --serve",
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/molly/timeline-template.git"
+    "url": "git+https://github.com/yonbergman/attack-on-democracy-timeline.git"
   },
   "keywords": [
     "timeline"
   ],
-  "author": "Molly White",
+  "author": "Ido Ivry & Yon Bergman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/molly/timeline-template/issues"
+    "url": "https://github.com/yonbergman/attack-on-democracy-timeline/issues"
   },
-  "homepage": "https://github.com/molly/timeline-template#readme",
+  "homepage": "https://github.com/yonbergman/attack-on-democracy-timeline#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
     "autoprefixer": "^10.4.13",
