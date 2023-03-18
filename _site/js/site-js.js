@@ -165,6 +165,19 @@ function onload() {
     }
   })
   
+  window.addEventListener('click', (ev) => {
+    window.emojisplosion({
+        emojiCount: ()=>Math.random() * 3 + 3,
+        emojis: ['🇮🇱'],
+        physics: {
+            gravity: 0.25,
+        },
+        position: {
+            x: ev.clientX,
+            y: ev.clientY,
+        },
+    });
+  })
   
   
 }
