@@ -88,6 +88,11 @@ sizes="180x180"
             </li>
             
             <li>
+              <input type="checkbox" name="filter" id="תגובות בעולם" checked />
+              <label for="תגובות בעולם">תגובות בעולם </label>
+            </li>
+            
+            <li>
               <input type="checkbox" name="filter" id="תקציבים" checked />
               <label for="תקציבים">תקציבים </label>
             </li>
@@ -96,6 +101,54 @@ sizes="180x180"
         </header>
       </div>
       <article class="timeline">
+        
+        <div
+          class="timeline-entry"
+          data-category="ממשלה,תגובות בעולם,בושה"
+          data-protesterAmount=""
+          aria-hidden="false"
+        >
+          <div class="timeline-icon red" title="Official">
+            
+            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+            
+          </div>
+          <div dir="rtl" class="timeline-description">
+            <span class="timestamp"
+              ><time datetime="2023-02-09T08:59:00.000Z"
+                >9 בפבואר, 2023 • 10:59</time
+              ></span
+            >
+            <h2 >
+              שגריר גרמניה מביע מורת רוח מדברי שרת ההסברה גלית דיסטל אטבריאן לפיה המפגינים ממומנים על ידי איראן וגרמניה
+            </h2>
+             
+            <p>
+               שגריר גרמניה בישראל, שטפן זייברט, הביע אכזבה מטענתה של שרת ההסברה, גלית דיסטל אטבריאן, שלפיה ההפגנות נגד התוכנית להחלשת מערכת המשפט ממומנות בכסף איראני או גרמני, ובכך כרכה במשפט אחד ידידה טובה של ישראל ואת איראן, מדינה טוטאליטרית המאיימת להשמידה.".
+
+דיסטל אטבריאן התייחסה לנושא בראיון עם עידן קוולר ששודר ב-8 לפברואר בגלי צה"ל. 
+            </p>
+             
+            <ul>
+              
+              <li>
+                <a href="https://www.haaretz.co.il/news/politics/2023-02-09/ty-article/.premium/00000186-36dc-dd98-a1b6-7ffe47cf0000" target="_blank">כתבה ב״הארץ״ על תגובת השגריר הגרמני</a>
+              </li>
+              
+              <li>
+                <a href="https://drive.google.com/file/d/19lZiwILsck_PQNf5TmjXc5q-1OBzdIK-/view?usp=share_link" target="_blank">הראיון בגל״צ ב-8 לפברואר עם גלית דיסטל אטבריאן</a>
+              </li>
+              
+            </ul>
+            
+            
+            <div class="timeline-categories">
+              <i class="fa-solid fa-tags" style="color: #888; margin-left: 4px; position: relative; top: 1px;" aria-hidden="true"></i>
+              ממשלה,תגובות בעולם,בושה
+            </div>
+            
+          </div>
+        </div>
         
         <div
           class="timeline-entry"
@@ -1032,10 +1085,11 @@ sizes="180x180"
         
       </article>
     </section>
-    <div style="position: fixed; bottom: 0; right: 0; padding: 10px 20px; font-size: 20px; z-index: 100; background-color: blue; color: white;">
-      <div id="flags" style="position: absolute; font-size: 24px; top:-24px; right: 4px; width: 100vw; text-align: right;">
+    <div class='protestor'>
+      <div id="flags">
       </div>
       <span id="protester-amount">0</span> מפגינים
+      <div id="arrow"><i class='fa-solid fa-arrow-up'></i></div>
     </div>
     
     <footer class="page-footer">

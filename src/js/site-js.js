@@ -42,6 +42,13 @@ function hideUnchecked() {
   reflowEntries();
 }
 
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
 function checkAll(ev) {
   const toValue = ev.target.checked;
   var checkboxes = document.querySelectorAll('input[type="checkbox"][name="filter"]');
@@ -89,6 +96,7 @@ function onload() {
     box.addEventListener('click', hideUnchecked);
   });
   document.querySelector('input[type="checkbox"]#all').addEventListener('click', checkAll);
+  document.querySelector('#arrow').addEventListener('click', scrollToTop);
 
   /* Flow entries */
   reflowEntries();

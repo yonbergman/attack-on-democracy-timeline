@@ -32,7 +32,7 @@ header.page-header
 	position: relative
 	background-size: contain
 	background-image: url('/img/background.png')
-	background-color: #002EAC
+	background-color: $primary-color
 	h1
 		font-size: 3.5em
 		letter-spacing: -0.02em
@@ -359,3 +359,37 @@ footer.page-footer
 
 .in-view
 	background-color: red !important
+
+.protestor
+	position: fixed
+	bottom: 0
+	right: 0
+	padding: 10px 20px
+	font-size: 20px
+	z-index: 100
+	background-color: $primary-color
+	color: white
+
+	#flags
+		position: absolute
+		font-size: 24px
+		top: -24px
+		right: 4px
+		width: 100vw
+		text-align: right
+
+	#arrow
+		position: absolute
+		left: -50px
+		bottom: 0
+		background-color: $primary-color
+		height: 44px
+		width: 44px
+		display: flex
+		align-items: center
+		justify-content: center
+		&:hover
+			cursor: pointer
+			background-color: darken($primary-color, 10%)
+		&:active
+			background-color: darken($primary-color, 20%)
