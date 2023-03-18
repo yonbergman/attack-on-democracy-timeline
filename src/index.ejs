@@ -31,6 +31,40 @@
         </header>
       </div>
       <article class="timeline">
+        <div class="timeline-entry first even future" data-protesteramount="490000" aria-hidden="false" id="future">
+          <div class="timeline-icon gold" title="The future">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+          </div>
+          <div dir="rtl" class="timeline-description">
+            <h2>
+              העתיד עוד לא נכתב ; צאו להפגין עכשיו
+            </h2>
+            
+            <p>
+              ״אם אנחנו רוצים שישראל תמשיך להיות, אסור לה להתרחק מהתקווה והחזון שיצרו אותה. חברים, אתם התקווה, אתם החזון, אתם הסיכוי".
+              - דוד גרוסמן
+            </p>
+
+                 
+                <ul>
+                  
+                  <li>
+                    <a href="https://hafganot.org/events" target="_blank">לרשימת הפגנות באתר הפגנות</a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://restart-israel.co.il/act/" target="_blank">לרשימת שביתות ומחאות באתר ריסטרט ישראל</a>
+                  </li>
+                  
+                  
+                </ul>
+                
+                
+             
+            
+            
+          </div>
+        </div>
         <% content.entries.forEach(function(entry){ %>
         <div
           class="timeline-entry"
@@ -66,7 +100,7 @@
                 <img src="<%= entry.imageUrl %>" alt="<%= entry.image.alt %>" />
                 <% if (entry.image.link) { %></a
               ><% } %> <% if (entry.image.caption) { %>
-              <span class="caption"><%- entry.image.caption %></span>
+              <span class="caption"><%- entry.image.caption %></span> 
               <% } %>
             </div>
             <% } %> <% if (!utilities.isWrappedInParagraphTags(entry.body)) { %>
@@ -99,7 +133,9 @@
     <div class='protestor'>
       <div id="flags">
       </div>
+      <a href="https://hafganot.org/events" target="_blank" style="color: white">
       <span id="protester-amount">0</span> מפגינים
+    </a>
       <div id="arrow"><i class='fa-solid fa-arrow-up'></i></div>
     </div>
     
