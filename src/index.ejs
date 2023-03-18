@@ -86,6 +86,11 @@
             <div class="timeline-categories">
               <i class="fa-solid fa-tags" style="color: #888; margin-left: 4px; position: relative; top: 1px;" aria-hidden="true"></i>
               <%= entry.categoriesString %>
+              <div style="float: left">
+                <%= entry.protesterAmount?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") %>
+                מפגינים
+              </div>
+
             </div>
             <% } %>
           </div>
