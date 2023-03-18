@@ -42,11 +42,12 @@ function hideUnchecked() {
   reflowEntries();
 }
 
-function scrollToTop() {
+function scrollToTop(ev) {
   window.scrollTo({
     top: 0,
     behavior: 'smooth',
   });
+  ev.target.blur();
 }
 
 function checkAll(ev) {
