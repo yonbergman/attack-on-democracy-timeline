@@ -37,6 +37,7 @@
           data-category="<%= entry.categoriesString %>"
           data-protesterAmount="<%= entry.protesterAmount %>"
           aria-hidden="false"
+          id="<%= entry.slug.current %>"
         >
           <div class="timeline-icon <%- entry.color || 'blue' %>" title="<%= entry.iconDescription %>">
             <% if (entry.icon) { %>
@@ -44,11 +45,17 @@
             <% } %>
           </div>
           <div dir="rtl" class="timeline-description">
+            <div>
             <span class="timestamp"
               ><time datetime="<%- entry.datetime || entry.date %>"
                 ><%- utilities.humanizeDate(entry.datetime, entry.date) %></time
               ></span
             >
+            <a href="#<%= entry.slug.current %>" target="_blank" title="Permalink" class="permalink">
+              <i class="fa-solid fa-link" aria-hidden="true"></i>
+            </a>
+              
+            </div>
             <h2 >
               <%- entry.title %>
             </h2>
