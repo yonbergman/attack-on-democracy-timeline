@@ -165,7 +165,7 @@ function onload() {
     }
   })
   
-  window.onclick = function (ev) {
+  document.querySelector('.timeline').onclick = function (ev) {
     window.emojisplosion({
         emojiCount: ()=>Math.random() * 3 + 3,
         emojis: ['🇮🇱'],
