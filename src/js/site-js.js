@@ -179,6 +179,24 @@ function onload() {
     });
     return true;
   }
+
+  // find all .permalink elements and add a click handler that copies the url to clipboard and adds a class visible to a span inside them called .copied
+  document.querySelectorAll('.permalink').forEach(function (el) {
+    el.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      const hash = el.getAttribute('href');
+      const url = window.location.origin + window.location.pathname + hash;
+      
+      navigator.clipboard.writeText(url).then(function() {
+        el.querySelector('.copied').classList.add('visible');
+        setTimeout(function () {
+          el.querySelector('.copied').classList.remove('visible');
+        }, 2000);
+      }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+      });
+    });
+  })
   
   
 }
