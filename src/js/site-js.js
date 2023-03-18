@@ -68,7 +68,7 @@ function checkAll(ev) {
 }
 
 function isItemInCategories(categories, visibleCategories) {
-  return categories.every((id) => visibleCategories.indexOf(id) >= 0)
+  return visibleCategories.some((id) => categories.indexOf(id) >= 0)
 }
 
 function reflowEntries() {
