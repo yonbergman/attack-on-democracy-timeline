@@ -385,11 +385,14 @@ footer.page-footer
 		background-color: $primary-color
 		height: 44px
 		width: 44px
-		display: flex
 		align-items: center
 		justify-content: center
+		display: none
 		&:hover
 			cursor: pointer
 			background-color: darken($primary-color, 10%)
 		&:active
 			background-color: darken($primary-color, 20%)
+
+.scrolled #arrow
+	display: flex
