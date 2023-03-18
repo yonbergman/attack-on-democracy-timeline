@@ -165,7 +165,7 @@ function onload() {
     }
   })
   
-  window.addEventListener('click', (ev) => {
+  window.onclick = function (ev) {
     window.emojisplosion({
         emojiCount: ()=>Math.random() * 3 + 3,
         emojis: ['🇮🇱'],
@@ -177,7 +177,8 @@ function onload() {
             y: ev.clientY,
         },
     });
-  })
+    return true;
+  }
   
   
 }
