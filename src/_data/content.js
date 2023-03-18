@@ -33,7 +33,7 @@ const enrich = async (entries) => {
       
       entry.iconDescription = findIcon(entry.icon)?.title;
     }
-    entry.imageUrl = entry.image && (await imageUrl(entry.image, 400));
+    entry.imageUrl = entry.image && entry.image.asset && entry.image.asset._ref && (await imageUrl(entry.image, 400));
   }
   return entries;
 };

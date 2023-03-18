@@ -93,7 +93,7 @@
             <h2 >
               <%- entry.title %>
             </h2>
-            <% if (entry.image) { %>
+            <% if (entry.image && entry.imageUrl) { %>
             <div class="captioned-image image-right">
               <% if (entry.image.link) { %><a href="<%= entry.image.link %>"
                 ><% } %>
