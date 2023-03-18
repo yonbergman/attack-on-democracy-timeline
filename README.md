@@ -5,18 +5,11 @@ A timeline of events leading up to the 2023 Israeli constitutional crisis.
 **Contents**
 
 - [Install](#install)
-- [Customize](#customize)
-  - [Primary content](#primary-content)
-  - [Meta](#meta)
-- [Additional customization](#additional-customization)
+- [Content](#content)
 - [Deploy](#deploy)
-  - [GitHub Pages](#github-pages)
-  - [Other services](#other-services)
-- [Responsiveness](#responsiveness)
-- [Browser compatibility](#browser-compatibility)
 - [Under the hood](#under-the-hood)
 
-![Screenshot of a timeline page with dummy content](docs/browser.png)
+![Screenshot of a timeline page](docs/browser.png)
 
 ## Install
 
