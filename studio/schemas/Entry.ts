@@ -3,6 +3,7 @@ import {
   FaBuilding,
   FaCalendarDay,
   FaDumpsterFire,
+  FaEnvelopeOpenText,
   FaFlag,
   FaGavel,
   FaGlobe,
@@ -14,6 +15,7 @@ import {
   FaQuestionCircle,
   FaRegFileImage,
   FaScroll,
+  FaUserTie,
 } from 'react-icons/fa'
 
 const icons = {
@@ -31,6 +33,8 @@ const icons = {
   'building-flag': FaBuilding,
   'dumpster-fire': FaDumpsterFire,
   gavel: FaGavel,
+  'envelope-open-text': FaEnvelopeOpenText,
+  'user-tie': FaUserTie,
 }
 
 export const Entry = {
@@ -73,20 +77,66 @@ export const Entry = {
       type: 'string',
       options: {
         list: [
-          'flag',
-          'calendar-days',
-          'landmark',
-          'person-military-to-person',
-          'plane-departure',
-          'microphone',
-          'globe',
-          'scroll',
-          'person-rifle',
-          'person-military-rifle',
-          'handshake',
-          'building-flag',
-          'dumpster-fire',
-          'gavel',
+          {
+            title: 'Protests',
+            value: 'flag',
+          },
+          {
+            title: 'Special Events',
+            value: 'calendar-days',
+          },
+          {
+            title: 'Government',
+            value: 'landmark',
+          },
+          {
+            title: 'Military',
+            value: 'person-military-to-person',
+          },
+          {
+            title: 'Travel',
+            value: 'plane-departure',
+          },
+          {
+            title: 'Media',
+            value: 'microphone',
+          },
+          {
+            title: 'International',
+            value: 'globe',
+          },
+          {
+            title: 'Legislation',
+            value: 'scroll',
+          },
+          {
+            title: 'Terror & Violence',
+            value: 'person-rifle',
+          },
+          {
+            title: 'Agreements & Treaties',
+            value: 'handshake',
+          },
+          {
+            title: 'Buildings',
+            value: 'building-flag',
+          },
+          {
+            title: 'Fire',
+            value: 'dumpster-fire',
+          },
+          {
+            title: 'Court',
+            value: 'gavel',
+          },
+          {
+            title: 'Letter',
+            value: 'envelope-open-text',
+          },
+          {
+            title: 'Official',
+            value: 'user-tie',
+          },
         ],
         layout: 'dropdown',
       },
@@ -97,7 +147,19 @@ export const Entry = {
       type: 'array',
       of: [{type: 'string'}],
       options: {
-        list: ['ממשלה', 'מחאה', 'חקיקה', 'תגובות בעולם', 'תקשורת', 'תקציבים', 'בג״צ', 'בושה'],
+        list: [
+          'ממשלה',
+          'מחאה',
+          'חקיקה',
+          'תגובות בעולם',
+          'תקשורת',
+          'תקציבים',
+          'בג״צ',
+          'בושה',
+          'נשיא המדינה',
+          'בטחוני',
+          'תגובות בארץ',
+        ],
       },
     },
     {

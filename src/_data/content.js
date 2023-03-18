@@ -1,3 +1,4 @@
+const {findIcon} = require('../lib/icons');
 const { fetchAllEntries, imageUrl } = require('../lib/sanity');
 
 const header = 'מאבק על הדמוקרטיה - ציר זמן';
@@ -27,6 +28,10 @@ const enrich = async (entries) => {
   for (const entry of entries) {
     if (Object.prototype.hasOwnProperty.call(entry, 'categories')) {
       entry.categoriesString = entry.categories.join(',');
+    }
+    if (Object.prototype.hasOwnProperty.call(entry, 'icon')) {
+      
+      entry.iconDescription = findIcon(entry.icon)?.title;
     }
     entry.imageUrl = entry.image && (await imageUrl(entry.image, 400));
   }
