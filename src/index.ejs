@@ -75,6 +75,12 @@
               <% }) %>
             </ul>
             <% } %>
+            <% if (entry.categoriesString) { %>
+            <div class="timeline-categories">
+              <i class="fa-solid fa-tags" style="color: #888; margin-left: 4px; position: relative; top: 1px;" aria-hidden="true"></i>
+              <%= entry.categoriesString %>
+            </div>
+            <% } %>
           </div>
         </div>
         <% }); %>
