@@ -1,3 +1,38 @@
+import {
+  FaAmilia,
+  FaBuilding,
+  FaCalendarDay,
+  FaDumpsterFire,
+  FaFlag,
+  FaGavel,
+  FaGlobe,
+  FaHandshake,
+  FaLandmark,
+  FaMicrophone,
+  FaPersonBooth,
+  FaPlaneDeparture,
+  FaQuestionCircle,
+  FaRegFileImage,
+  FaScroll,
+} from 'react-icons/fa'
+
+const icons = {
+  flag: FaFlag,
+  'calendar-days': FaCalendarDay,
+  landmark: FaLandmark,
+  'person-military-to-person': FaPersonBooth,
+  'plane-departure': FaPlaneDeparture,
+  microphone: FaMicrophone,
+  globe: FaGlobe,
+  scroll: FaScroll,
+  'person-rifle': FaRegFileImage,
+  'person-military-rifle': FaAmilia,
+  handshake: FaHandshake,
+  'building-flag': FaBuilding,
+  'dumpster-fire': FaDumpsterFire,
+  gavel: FaGavel,
+}
+
 export const Entry = {
   name: 'entry',
   type: 'document',
@@ -7,6 +42,13 @@ export const Entry = {
       title: 'title',
       subtitle: 'datetime',
       media: 'icon',
+    },
+    prepare({title, subtitle, media}) {
+      return {
+        title,
+        subtitle: new Date(subtitle).toLocaleDateString('he-IL'),
+        media: icons[media] || FaQuestionCircle,
+      }
     },
   },
   fields: [
@@ -55,7 +97,7 @@ export const Entry = {
       type: 'array',
       of: [{type: 'string'}],
       options: {
-        list: ['ממשלה', 'מחאה', 'אירוע חשוב', 'חקיקה', 'תגובות בעולם', 'אישים', 'תקציבים', 'בג״צ'],
+        list: ['ממשלה', 'מחאה', 'חקיקה', 'תגובות בעולם', 'תקשורת', 'תקציבים', 'בג״צ', 'בושה'],
       },
     },
     {
@@ -134,6 +176,18 @@ export const Entry = {
       title: 'Protester Amount',
       type: 'number',
       description: 'The amount of protesters.',
+    },
+  ],
+  orderings: [
+    {
+      title: 'Event Date, Latest',
+      name: 'eventDateDesc',
+      by: [{field: 'datetime', direction: 'desc'}],
+    },
+    {
+      title: 'Event Date, Oldest',
+      name: 'eventDateAsc',
+      by: [{field: 'datetime', direction: 'asc'}],
     },
   ],
 }
