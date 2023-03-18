@@ -42,22 +42,25 @@ function hideUnchecked() {
   reflowEntries();
 }
 
-function checkAll() {
+function checkAll(ev) {
+  const toValue = ev.target.checked;
   var checkboxes = document.querySelectorAll('input[type="checkbox"][name="filter"]');
   checkboxes.forEach(function (box) {
-    box.checked = true;
+    box.checked = toValue;
   });
   var entries = document.getElementsByClassName('timeline-entry');
   for (var i = 0; i < entries.length; i++) {
-    show(entries[i]);
+    if (toValue) {
+      show(entries[i]); 
+    } else {
+      hide(entries[i]);
+    }
   }
   reflowEntries();
 }
 
 function isItemInCategories(categories, visibleCategories) {
-  return visibleCategories.some(function (id) {
-    return categories.indexOf(id) >= 0;
-  });
+  return categories.every((id) => visibleCategories.indexOf(id) >= 0)
 }
 
 function reflowEntries() {
