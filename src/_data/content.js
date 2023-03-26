@@ -25,6 +25,20 @@ const getFilters = (entries) => {
 };
 
 const enrich = async (entries) => {
+  // reverse for chronological order
+  entries.reverse();
+  let max = 0;
+  for (const entry of entries) {
+    if (!entry.protesterAmount) { 
+      entry.protesterAmount = max;
+    } else {
+      max = Math.max(max, entry.protesterAmount)
+    }
+  }
+  entries.reverse();
+
+
+
   for (const entry of entries) {
     if (Object.prototype.hasOwnProperty.call(entry, 'categories')) {
       entry.categoriesString = entry.categories.join(',');
