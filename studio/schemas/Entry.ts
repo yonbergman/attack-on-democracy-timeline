@@ -1,3 +1,5 @@
+import {RTLStringInput} from '../components/RTLStringInput'
+import {CustomField} from '../components/RTLField'
 import {
   FaAmilia,
   FaBuilding,
@@ -58,83 +60,92 @@ export const Entry = {
   fields: [
     {
       name: 'title',
-      title: 'Title',
-      description: 'The title of the entry.',
+      title: 'כותרת',
       type: 'string',
       validation: (Rule) => Rule.required(),
+      components: {
+        field: CustomField,
+        input: RTLStringInput,
+      },
     },
     {
       name: 'datetime',
-      title: 'Date',
-      description: 'The date and time of the entry.',
+      title: 'תאריך ושעה',
+      description: 'במידה ומדובר רק ביום, לשים בשעה 00:00',
       type: 'datetime',
       validation: (Rule) => Rule.required(),
+      components: {
+        field: CustomField,
+      },
     },
     {
       name: 'icon',
-      title: 'Icon',
-      description: 'The icon of the entry.',
+      title: 'אייקון / צלמית',
       type: 'string',
+      components: {
+        field: CustomField,
+        input: RTLStringInput,
+      },
       options: {
         list: [
           {
-            title: 'Protests',
+            title: 'הפגנות (דגל)',
             value: 'flag',
           },
           {
-            title: 'Special Events',
+            title: 'ימים מיוחדים (לוח שנה)',
             value: 'calendar-days',
           },
           {
-            title: 'Government',
+            title: 'החלטות ממשלה (בניין ממשלה)',
             value: 'landmark',
           },
           {
-            title: 'Military',
+            title: 'צבאי (שני אנשי צבא)',
             value: 'person-military-to-person',
           },
           {
-            title: 'Travel',
+            title: 'טיסות (מטוס)',
             value: 'plane-departure',
           },
           {
-            title: 'Media',
+            title: 'תקשרות (מיקרופון)',
             value: 'microphone',
           },
           {
-            title: 'International',
+            title: 'בין לאומי (גלובוס)',
             value: 'globe',
           },
           {
-            title: 'Legislation',
+            title: 'חקיקה (מגילה)',
             value: 'scroll',
           },
           {
-            title: 'Terror & Violence',
+            title: 'טרור ואלימות (איש עם רובה)',
             value: 'person-rifle',
           },
           {
-            title: 'Agreements & Treaties',
+            title: 'הסכמים (לחיצת יד)',
             value: 'handshake',
           },
           {
-            title: 'Buildings',
+            title: '(בניין עם דגל)',
             value: 'building-flag',
           },
           {
-            title: 'Fire',
+            title: 'דברים רעים (פח אשפה בוער)',
             value: 'dumpster-fire',
           },
           {
-            title: 'Court',
+            title: 'בית משפט (פטיש)',
             value: 'gavel',
           },
           {
-            title: 'Letter',
+            title: 'מכתבים (מכתב פתוח)',
             value: 'envelope-open-text',
           },
           {
-            title: 'Official',
+            title: 'אנשים רשמיים (איש בעניבה)',
             value: 'user-tie',
           },
         ],
@@ -143,7 +154,11 @@ export const Entry = {
     },
     {
       name: 'categories',
-      title: 'Categories',
+      title: 'קטגוריות',
+      components: {
+        field: CustomField,
+        input: RTLStringInput,
+      },
       type: 'array',
       of: [{type: 'string'}],
       options: {
@@ -164,57 +179,108 @@ export const Entry = {
     },
     {
       name: 'color',
-      title: 'Color',
+      title: 'צבע',
       type: 'string',
-      description: 'The color of the entry icon.',
-      options: {list: ['blue', 'red']},
+      description: 'הצבע של העיגול מסביב לאייקון',
+      options: {
+        list: [
+          {
+            title: 'כחול',
+            value: 'blue',
+          },
+          {
+            title: 'אדום (דברים בעייתים)',
+            value: 'red',
+          },
+        ],
+      },
       initialValue: 'blue',
+      components: {
+        field: CustomField,
+        input: RTLStringInput,
+      },
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'קישור ייחודי לפריט',
       type: 'slug',
       options: {
-        source: 'title',
+        source: (doc) => {
+          if (doc.slug?.current) return doc.slug?.current
+          if (doc.datetime) {
+            const date = new Date(doc.datetime)
+            const dd = String(date.getDate()).padStart(2, '0')
+            const mm = String(date.getMonth() + 1).padStart(2, '0')
+            const dateString = dd + '-' + mm
+            return 'slug ' + doc.title + ' ' + dateString
+          }
+          // format date string to dd-mm format
+          return doc.title
+        },
       },
-      description: 'The ID of the entry.',
+      components: {
+        field: CustomField,
+      },
+      description: 'כדי שהקישור יעבוד תמיד יש להשתמש תמיד באותיות אנגלית קטנות מקפים ומספרים',
       validation: (Rule) => Rule.required(),
     },
 
     {
       name: 'body',
-      title: 'Body',
-      description: 'The content of the entry.',
+      title: 'תוכן',
+      components: {
+        field: CustomField,
+        input: RTLStringInput,
+      },
       type: 'text',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'image',
-      title: 'Image',
+      title: 'תמונה',
       type: 'image',
+      description:
+        'יש להשתמש רק בתוכן שאפשר להשתמש בו (נניח תצלומים מויקיפדיה) או מ״הארץ״ בקרדיט או ל״הארץ״,  וקישור לכתבה.',
+      components: {
+        field: CustomField,
+      },
       validation: (Rule) => Rule.optional(),
       fields: [
         {
           name: 'alt',
-          title: 'Alternative text',
+          title: 'טקסט חלופי',
           type: 'string',
+          components: {
+            field: CustomField,
+            input: RTLStringInput,
+          },
         },
         {
           name: 'caption',
-          title: 'Caption',
+          title: 'תיאור מתחת לתמונה',
           type: 'string',
+          components: {
+            field: CustomField,
+            input: RTLStringInput,
+          },
         },
         {
           name: 'link',
-          title: 'Link',
+          title: 'קישור',
           type: 'url',
+          components: {
+            field: CustomField,
+          },
         },
       ],
     },
     {
       name: 'links',
-      title: 'Links',
+      title: 'קישורים',
       type: 'array',
+      components: {
+        field: CustomField,
+      },
       of: [
         {
           type: 'object',
@@ -223,6 +289,9 @@ export const Entry = {
               name: 'title',
               title: 'Title',
               type: 'string',
+              components: {
+                input: RTLStringInput,
+              },
             },
             {
               name: 'url',
@@ -235,9 +304,12 @@ export const Entry = {
     },
     {
       name: 'protesterAmount',
-      title: 'Protester Amount',
+      title: 'מספר מפגינים',
+      description: 'יש לעדכן רק כאשר מספר המפגינים עולה על המספר המירבי עד אותו יום',
       type: 'number',
-      description: 'The amount of protesters.',
+      components: {
+        field: CustomField,
+      },
     },
   ],
   orderings: [
