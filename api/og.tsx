@@ -8,13 +8,8 @@ export const config = {
 //   return new Response(`Hello, from ${req.url} I'm now an Edge Function!`);
 // };
 
-console.log(new URL('../assets/TYPEWR__.ttf', import.meta.url))
-const font = fetch(new URL('../assets/TYPEWR__.ttf', import.meta.url)).then(
-  (res) => res.arrayBuffer(),
-);
 
 export default async function () {
-  const fontData = await font
   return new ImageResponse(
     (
       <div
@@ -30,18 +25,13 @@ export default async function () {
           justifyContent: 'center',
         }}
       >
-
+        Hello
       </div>
     ),
     {
       width: 1200,
       height: 600,
       fonts: [
-        {
-          name: 'Typewriter',
-          data: fontData,
-          style: 'normal',
-        }
       ]
     },
   );
