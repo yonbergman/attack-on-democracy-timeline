@@ -49,6 +49,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const entry = req.body as RootObject;
   console.log(entry);
 
+  console.log('Waiting 15 seconds...');
+  await wait(15000);
+  console.log('Posting to Twitter');
+
   try {
     const date = humanizeDate(entry.datetime);
     const message = `${date}\n${entry.title}\n\nhttps://fightfordemocracystory.co.il/l/${entry.slug.current}`;
@@ -63,6 +67,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       message: 'Internal Server Error',
     });
   }
+}
+
+async function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function readBody(readable) {
