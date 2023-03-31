@@ -11,6 +11,7 @@ const tweet = (message: string) => {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET!,
   });
   return T.post('statuses/update', { status: message }, function (err, data, response) {
+    console.log('response');
     if (err) {
       console.log(err);
     }
@@ -63,6 +64,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       message: message,
     });
   } catch {
+    console.log('catch');
     res.status(200).json({
       message: 'Internal Server Error',
     });
