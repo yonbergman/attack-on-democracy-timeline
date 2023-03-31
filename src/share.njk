@@ -1,0 +1,24 @@
+---
+pagination:
+    data: content.entries
+    size: 1
+    alias: entries
+permalink: "entries/{{ entries.slug.current }}/"
+---
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta property="og:title" content="{{ entries.title }}" />
+    <meta property="og:description" content="{{ entries.body  }}" />
+    <meta property="og:image" content="{{ entries.ogImageUrl |safe  }}" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image">
+    <script>
+      window.location = "/#{{ entries.slug.current }}";
+      </script>
+  </head>
+  <body>
+    {{ entries.title }}
+  </body>
+</html>
