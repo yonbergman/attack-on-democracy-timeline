@@ -27,7 +27,12 @@ async function imageUrl(image, width) {
   return imageBuilder.image(image).width(width).url();
 }
 
+async function ogImageUrl(image) {
+  return imageBuilder.image(image).width(1200).height(630).url();
+}
+
 module.exports = {
   fetchAllEntries,
   imageUrl,
+  ogImageUrl,
 };

@@ -1,5 +1,5 @@
-const {findIcon} = require('../lib/icons');
-const { fetchAllEntries, imageUrl } = require('../lib/sanity');
+const { findIcon } = require('../lib/icons');
+const { fetchAllEntries, imageUrl, ogImageUrl } = require('../lib/sanity');
 
 const header = 'מאבק על הדמוקרטיה - ציר זמן';
 
@@ -29,25 +29,32 @@ const enrich = async (entries) => {
   entries.reverse();
   let max = 0;
   for (const entry of entries) {
-    if (!entry.protesterAmount) { 
+    if (!entry.protesterAmount) {
       entry.protesterAmount = max;
     } else {
-      max = Math.max(max, entry.protesterAmount)
+      max = Math.max(max, entry.protesterAmount);
     }
   }
   entries.reverse();
-
-
 
   for (const entry of entries) {
     if (Object.prototype.hasOwnProperty.call(entry, 'categories')) {
       entry.categoriesString = entry.categories.join(',');
     }
     if (Object.prototype.hasOwnProperty.call(entry, 'icon')) {
-      
       entry.iconDescription = findIcon(entry.icon)?.title;
     }
-    entry.imageUrl = entry.image && entry.image.asset && entry.image.asset._ref && (await imageUrl(entry.image, 400));
+    entry.imageUrl =
+      entry.image &&
+      entry.image.asset &&
+      entry.image.asset._ref &&
+      (await imageUrl(entry.image, 400));
+    entry.ogImageUrl =
+      (entry.image &&
+        entry.image.asset &&
+        entry.image.asset._ref &&
+        (await ogImageUrl(entry.image))) ||
+      'https://fightfordemocracystory.co.il/img/og-image.png';
   }
   return entries;
 };
