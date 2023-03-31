@@ -4,17 +4,21 @@ import { humanizeDate } from '../src/_data/utilities';
 const { isValidSignature, SIGNATURE_HEADER_NAME } = require('@sanity/webhook');
 
 const tweet = (message: string) => {
-  var T = new Twit({
-    consumer_key: process.env.TWITTER_CONSUMER_KEY!,
-    consumer_secret: process.env.TWITTER_CONSUMER_SECRET!,
-    access_token: process.env.TWITTER_ACCESS_TOKEN!,
-    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET!,
-  });
-  return T.post('statuses/update', { status: message }, function (err, data, response) {
-    console.log('response');
-    if (err) {
-      console.log(err);
-    }
+  return new Promise((resolve, reject) => {
+    var T = new Twit({
+      consumer_key: process.env.TWITTER_CONSUMER_KEY!,
+      consumer_secret: process.env.TWITTER_CONSUMER_SECRET!,
+      access_token: process.env.TWITTER_ACCESS_TOKEN!,
+      access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET!,
+    });
+    return T.post('statuses/update', { status: message }, function (err, data, response) {
+      console.log('response');
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
   });
 };
 
@@ -59,6 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const message = `${date}\n${entry.title}\n\nhttps://fightfordemocracystory.co.il/l/${entry.slug.current}`;
     console.log(message);
     await tweet(message);
+    console.log('output');
 
     res.status(200).json({
       message: message,
