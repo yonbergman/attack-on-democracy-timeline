@@ -54,22 +54,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const entry = req.body as RootObject;
   console.log(entry);
 
-  console.log('Waiting 15 seconds...');
-  await wait(15000);
-  console.log('Posting to Twitter');
-
   try {
     const date = humanizeDate(entry.datetime);
-    const message = `${date}\n${entry.title}\n\nhttps://fightfordemocracystory.co.il/l/${entry.slug.current}`;
+    const url = `https://fightfordemocracystory.co.il/l/${entry.slug.current}`;
+    // test if url is live
+    console.log('Checking if page is live...');
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.log('Page not live');
+      res.status(500);
+      return;
+    }
+    const message = `${date}\n${entry.title}\n\n${url}`;
+    console.log('Posting to Twitter...');
     console.log(message);
     await tweet(message);
-    console.log('output');
+    console.log('Posted');
 
     res.status(200).json({
       message: message,
     });
   } catch {
-    console.log('catch');
+    console.log('Error posting to Twitter - skipping tweet');
     res.status(200).json({
       message: 'Internal Server Error',
     });
